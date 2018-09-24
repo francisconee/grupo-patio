@@ -53,6 +53,7 @@ function onScroll(event){
     });
 }
 
+
 $( document ).ready(function() {
 
 
@@ -135,16 +136,89 @@ $( document ).ready(function() {
 	    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	}
 
-
+	
 	$(function(){
 	  $('.submenu-hover').hover(function() {
 	  	$(this).find('.btn-patio').addClass('border-bottom')
-	    $(this).parent().find('.submenu').addClass('fadeIn block');
+	    $(this).find('.submenu').addClass('fadeIn block-sub-menu');
 
 	  }, function() {
-	    $(this).parent().find('.submenu').removeClass('fadeIn block');
+	    $(this).find('.submenu').removeClass('fadeIn block-sub-menu');
 	    $(this).find('a').removeClass('border-bottom')
 	  })
 	})
+	
+
+
+	    $('#owl-carousel').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    items: 3,
+		    autoplay:true,
+		    autoplayTimeout:5000,
+		    autoplayHoverPause:true,
+		    margin:0,
+		    nav:true,
+		    dots:false,
+		    center: false,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:false
+		        },
+		        320:{
+		            items:1,
+		            nav:false
+		        },
+		        600:{
+		            items:1,
+		            nav:false
+		        },
+		        1000:{
+		            items:3,
+		            nav:true,
+		            loop:false
+		        }
+		    }
+		})
+
+		$('#owl-carousel-mb').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    items: 3,
+		    autoplay:true,
+		    autoplayTimeout:5000,
+		    autoplayHoverPause:true,
+		    margin:0,
+		    nav:true,
+		    dots:false,
+		    center: false,
+		    responsive:{
+		        0:{
+		            items:1,
+		            nav:false
+		        },
+		        320:{
+		            items:1,
+		            nav:true
+		        },
+		        600:{
+		            items:1,
+		            nav:true
+		        },
+		        1000:{
+		            items:3,
+		            nav:true,
+		            loop:false
+		        }
+		    }
+		})
+
+	    $( ".btn-patio-mb" ).click(function() {
+		  $(this).parent('.submenu-hover').find('.submenu-mb').toggleClass('block');
+		});
+
 
 });
